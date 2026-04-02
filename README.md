@@ -1,2 +1,35 @@
 # asemu
-Android Studio Emulator
+Android Studio Emulator that works without Android Studio
+
+# Example
+### Run Emulator
+**Quick start**
+```
+python3 asemu.py run --name phone
+```
+**Extra example (pass additional flags to the emulator)**
+```
+python3 asemu.py run --name phone --extra='-memory 4096'
+```
+**All options**
+```
+Usage: asemu.py run [OPTIONS]                                                                                                                                                       
+                                                                                                                                                                                     
+╭─ Options ────────────────────────────────────────────────────────────╮
+│ --name         TEXT     AVD name [default: phone]                    │
+│ --arch         TEXT     Architecture [default: x86_64]               │
+│ --image        TEXT     System image [default: google_apis]          │
+│ --sdk          INTEGER  Android SDK version [default: 36]            │
+│ --extra        TEXT     Additional flags for launch                  │
+╰──────────────────────────────────────────────────────────────────────╯
+```
+
+### Delete AVD
+```
+python3 asemu.py delete --name phone
+```
+
+### List AVDs
+```
+python3 asemu.py list
+```
