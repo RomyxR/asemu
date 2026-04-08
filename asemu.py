@@ -46,6 +46,7 @@ def run(
     arch: str = typer.Option("x86_64", help="Architecture"),
     image: str = typer.Option("google_apis", help="System image"),
     sdk: int = typer.Option(36, help="Android SDK version"),
+    device: str = typer.Option("pixel", help="Android device"),
     extra: str = typer.Option("", "--extra", help="Additional flags for launch"),
 ):
     def download_file(url, filename):
@@ -83,7 +84,7 @@ def run(
     avd_path = os.path.join("avd", f"{name}.avd")
     if not os.path.exists(avd_path):
         print("Creating an AVD...")
-        subprocess.run([avdmanager_path, "create", "avd", "--name", name, "--package", fr"system-images;android-{sdk};{image};{arch}", "--device", "pixel"])
+        subprocess.run([avdmanager_path, "create", "avd", "--name", name, "--package", fr"system-images;android-{sdk};{image};{arch}", "--device", device])
     # Launch AVD
     print("Launch AVD...")
     sys_dir = os.path.abspath(os.path.join(".", SDK_ROOT_PATH, "system-images", f"android-{sdk}", image, arch))
