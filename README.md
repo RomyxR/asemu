@@ -15,7 +15,7 @@ python3 asemu.py run --name phone --extra='-memory 4096'
 ```
  Usage: asemu.py run [OPTIONS]
 
-╭─ Options ────────────────────────────── ─────╮
+╭─ Options ────────────────────────────────────╮
 │ --name          TEXT     AVD name [default: phone]                   │
 │ --arch          TEXT     Architecture [default: x86_64]              │
 │ --image         TEXT     System image [default: google_apis]         │
